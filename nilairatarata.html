@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Rata-Rata Nilai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hitung Rata-Rata Nilai</h1>
+    <form id="nilaiForm">
+        <label for="indonesia">Bahasa Indonesia: </label>
+        <input type="number" id="indonesia" required><br>
+
+        <label for="matematika">Matematika: </label>
+        <input type="number" id="matematika" required><br>
+
+        <label for="biologi">Biologi: </label>
+        <input type="number" id="biologi" required><br>
+
+        <label for="fisika">Fisika: </label>
+        <input type="number" id="fisika" required><br>
+
+        <label for="inggris">Bahasa Inggris: </label>
+        <input type="number" id="inggris" required><br>
+
+        <button type="button" onclick="hitungRataRata()">Hitung Rata-Rata</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function hitungRataRata() {
+            var indonesia = parseFloat(document.getElementById('indonesia').value);
+            var matematika = parseFloat(document.getElementById('matematika').value);
+            var biologi = parseFloat(document.getElementById('biologi').value);
+            var fisika = parseFloat(document.getElementById('fisika').value);
+            var inggris = parseFloat(document.getElementById('inggris').value);
+
+            var total = indonesia + matematika + biologi + fisika + inggris;
+            var rataRata = total / 5;
+
+            document.getElementById('result').innerText = "Nilai rata-rata adalah: " + rataRata.toFixed(2);
+        }
+    </script>
+</body>
+</html>
